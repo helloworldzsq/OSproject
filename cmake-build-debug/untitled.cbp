@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="untitled"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/C++Project/OSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="diaodu.c">
+				<Option output="D:/C++Project/OSProject/cmake-build-debug/diaodu.c.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/C++Project/OSProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\c++\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\c++\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\c++\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 diaodu.c"/>
+					<CompileFile command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="diaodu.c/fast">
+				<Option output="D:/C++Project/OSProject/cmake-build-debug/diaodu.c.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/C++Project/OSProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\c++\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\c++\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\c++\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 diaodu.c/fast"/>
+					<CompileFile command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/C++Project/OSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/C++Project/OSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C++/MinGW/bin/mingw32-make.exe -f &quot;D:/C++Project/OSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/C++Project/OSProject/ReaderWriter.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/WriterFirst.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/exitTest.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/fork.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/lockf.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/main.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/minishell.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/pipe.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/pipeTest.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/sprintTest.c">
+			<Option target="diaodu.c"/>
+		</Unit>
+		<Unit filename="D:/C++Project/OSProject/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

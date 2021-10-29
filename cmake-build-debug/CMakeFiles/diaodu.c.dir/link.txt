@@ -1,0 +1,3 @@
+"D:\C++\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\diaodu.c.dir/objects.a
+D:\C++\MinGW\bin\ar.exe cr CMakeFiles\diaodu.c.dir/objects.a @CMakeFiles\diaodu.c.dir\objects1.rsp
+D:\C++\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\diaodu.c.dir/objects.a -Wl,--no-whole-archive -o diaodu.c.exe -Wl,--out-implib,libdiaodu.c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\diaodu.c.dir\linklibs.rsp

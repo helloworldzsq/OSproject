@@ -1,0 +1,9 @@
+"D:\C++\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" D:\C++Project\OSProject
+CMake Error at CMakeLists.txt:6 (add_executable):
+  The target name "实锟斤拷4/diaodu.c" is reserved or not valid for certain CMake
+  features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+-- Configuring incomplete, errors occurred!
+See also "D:/C++Project/OSProject/cmake-build-debug/CMakeFiles/CMakeOutput.log".
