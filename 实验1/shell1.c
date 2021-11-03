@@ -18,6 +18,7 @@ int trim(char * cmd1,char * tem,char * cmd){
     }
     return n;
 }
+
 int main(){
     char cmd1[80];
     char tem[80];
@@ -27,8 +28,6 @@ int main(){
     char *scwt2[] = { "dir","cp", "rm" ,"echo","end" };
     static int cmdnum = 5;
     int j;
-    //子进程的返回数值
-    int rtn;
     while(1){
         printf( "Please input command:");
         gets(cmd1);
@@ -50,7 +49,7 @@ int main(){
                 continue;
             } else{
                 if (fork()==0){
-                    execl("/bin/sh","sh","-c", cmd, (char*)0);
+                    execl("/bin/sh","sh","-c", tem, (char*)0);
                     perror(cmd);
                 }
                 wait(0);
