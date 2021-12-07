@@ -14,7 +14,6 @@ sem_t wrt, mutex;
 //记录当前有几个读进程在访问文件
 int readCount;
 
-
 //读者
 void* Reader(void* param) {
     long threadid = (long)param;

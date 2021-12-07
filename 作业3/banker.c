@@ -6,10 +6,8 @@
 # include <semaphore.h>
 # include <string.h>
 # include <unistd.h>
-
 //mutex保证存钱和取钱互斥访问
 sem_t mutex;
-
 int money = 100;
 //存钱
 void *saveMoney(void* param) {

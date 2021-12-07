@@ -5,13 +5,13 @@
 #include <sys/msg.h>
 #include <sys/ipc.h>
 #define MSG_KEY 24
-//ÏûÏ¢¶ÓÁĞ±êÊ¶·û
+//æ¶ˆæ¯é˜Ÿåˆ—æ ‡è¯†ç¬¦
 int msqid;
 
 struct msgbuf{
-    //    ÏûÏ¢ÀàĞÍ
+    //    æ¶ˆæ¯ç±»å‹
     long mtype;
-    //    »º³åÇø´óĞ¡
+    //    ç¼“å†²åŒºå¤§å°
     char mtext[1024];
 }msgbuf;
 
@@ -20,16 +20,16 @@ void client(){
     printf("Input a line:");
     scanf("%s",msgbuf.mtext);
     msgbuf.mtype=1;
-    //½«ÏûÏ¢ÊäÈëµ½»º³åÇøÖĞ
+    //å°†æ¶ˆæ¯è¾“å…¥åˆ°ç¼“å†²åŒºä¸­
     msgsnd(msqid,&msgbuf,1024,0);
 }
 
 void server(){
     msqid=msgget(MSG_KEY,IPC_CREAT|0666);
-    //´Ó»º³åÇøÖĞÈ¡³öÏûÏ¢
+    //ä»ç¼“å†²åŒºä¸­å–å‡ºæ¶ˆæ¯
     msgrcv(msqid,&msgbuf,1024,2L,0);
     printf("The reversed line is:%s\n",msgbuf.mtext);
-    //É¾³ıÏûÏ¢¶ÓÁĞ
+    //åˆ é™¤æ¶ˆæ¯é˜Ÿåˆ—
     msgctl(msqid,IPC_RMID,0);
 }
 
