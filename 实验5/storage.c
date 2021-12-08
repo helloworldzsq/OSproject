@@ -27,6 +27,7 @@
         int pfn;
         struct pfc_struct *next;
     }pfc_type;
+
     //1.定义用户进程虚页控制结构 2.空页面头指针 3. 忙页面头指针  4. 忙页面尾指针
     pfc_type pfc[total_vp], *freepf_head, *busypf_head, *busypf_tail;
     //1.页面失效次数  2.a[]  指令序列
@@ -43,13 +44,10 @@
     int main( )
     {
         int s,i;
-
         srand(10*getpid());                    /*由于每次运行时进程号不同，故可用来作为初始化随机数队列的“种子”*/
-
         //rand() 返回一个范围在 0 到 RAND_MAX 之间的伪随机数。
         //RAND_MAX 是一个常量，它的默认值在不同的实现中会有所不同，但是值至少是 32767
         s=(float)319*rand()/32767+1;
-
         for(i=0;i<total_instruction;i+=4)        /*产生指令队列*/
             {
             if(s<0||s>319)
@@ -71,7 +69,8 @@
                 page[i]=a[i]/10;
                 offset[i]=a[i]%10;
             }
-        for(i=4;i<=32;i++)   //物理块号 4个页面到32个页面
+        //   从四个页面到32个，查看命中率
+        for(i=4;i<=32;i++)
             {
                 printf("---%2d page frames---\n",i);
                 //先进先出置换算法
