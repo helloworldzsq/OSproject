@@ -21,7 +21,7 @@ void AddListTill(int a)
     temp->next=NULL;
 
     //连接分两种情况1.一个节点都没有2.已经有节点了，添加到尾巴上
-    if(NULL==head)
+    if (NULL==head)
         head=temp;
     else
         end->next=temp;

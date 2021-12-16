@@ -1,4 +1,3 @@
-
 obj-m := rwbuf.o
 KERNELDIR := /usr/src/linux-headers-5.11.0-40-generic
 PWD := $(shell pwd)

@@ -1,14 +1,8 @@
-// 模块
 #include <linux/module.h>
-// 内核
 #include <linux/kernel.h>
-// struct file_operations
 #include <linux/fs.h>
-// copy_to_user() & copy_from_user
 #include <linux/uaccess.h>
-// <string.h>不行，用于memset和strcpy
 #include <linux/string.h>
-// kmalloc和kfree
 #include <linux/slab.h>
 // rwbuf.c,  driver for virtual char-device
 #define RW_CLEAR 0x123

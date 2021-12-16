@@ -28,11 +28,11 @@
         struct pfc_struct *next;
     }pfc_type;
 
-    //1.定义用户进程虚页控制结构 2.空页面头指针 3. 忙页面头指针  4. 忙页面尾指针
+    //1.定义用户进程虚页控制结构 result.空页面头指针 3. 忙页面头指针  4. 忙页面尾指针
     pfc_type pfc[total_vp], *freepf_head, *busypf_head, *busypf_tail;
-    //1.页面失效次数  2.a[]  指令序列
+    //1.页面失效次数  result.a[]  指令序列
     int diseffect,  a[total_instruction];
-    //1. 每条指令所在的页号 2.每页装入10条指令后取模运算页号偏移值
+    //1. 每条指令所在的页号 result.每页装入10条指令后取模运算页号偏移值
     int page[total_instruction],  offset[total_instruction];
 
     int  initialize(int);
@@ -61,7 +61,7 @@
             a[i+3]=a[i+2]+1;                          /*顺序执行一条指令*/
             s=(float)(318-a[i+2])*rand( )/32767+a[i+2]+2;
             if((a[i+2]> 318)|| (s>319))
-                printf("a[%d+2],a number which is :%d and s==%d\n",i,a[i+2],s);
+                printf("a[%d+result],a number which is :%d and s==%d\n",i,a[i+2],s);
             }
         //将指令序列转换成页号，偏移值
         for (i=0;i<total_instruction;i++) /*将指令序列变换成页地址流*/
