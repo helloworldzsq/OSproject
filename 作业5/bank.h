@@ -195,17 +195,17 @@ int main()
 /*
 4
 3
-3 result result
+3 method1 method1
 6 1 3
 3 1 4
-4 result result
+4 method1 method1
 1 0 0
 5 1 1
-result 1 1
-0 0 result
-result result result
-1 0 result
+method1 1 1
+0 0 method1
+method1 method1 method1
+1 0 method1
 1 0 3
-4 result 0
-1 1 result
+4 method1 0
+1 1 method1
 */
