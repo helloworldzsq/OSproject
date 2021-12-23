@@ -51,9 +51,6 @@ char command[16];
 *创建根目录
 *
 */
-void findBit(struct map *MAP){
-}
-
 void init(struct fatid *FAT){
     int i,j;
     for(i=1;i<FATNUM*FATLIST;i++)			//第块 不使用
@@ -314,10 +311,8 @@ int rmdir(char *str)
     return 0;
 }
 
-
-
 /*
-*更改当前目录
+*更改当前目录(cd命令)
 */
 int changedir(char *str)
 {
@@ -374,8 +369,6 @@ int changedir(char *str)
 
     CURRENT=CURRENT+str+"\\";
     return 1;
-
-
 }
 
 /*
@@ -409,7 +402,6 @@ int create(char *str,int length)
         name[i]=str[i];
         if(str[i+1]=='.')
             break;
-
     }
 
     if(i>=8)
@@ -431,9 +423,6 @@ int create(char *str,int length)
         exname[j]=str[i];
         i++;
     }
-
-
-
     if(strcmp(name,"0")==0)
     {
         printf("文件名称不能为空\n");
@@ -447,12 +436,11 @@ int create(char *str,int length)
     }
 
 
-
     for(i=2;i<LIST_SIZE;i++)
     {
         if(strcmp(dir->list[i].fname,name)==0&&strcmp(dir->list[i].exname,exname)==0)
         {
-            printf("改文件夹下，已经有同名文件");
+            printf("该文件夹下，已经有同名文件");
             return 0;
         }
         if(strcmp(dir->list[i].fname,"")==0)
@@ -487,7 +475,7 @@ int create(char *str,int length)
             MAP->maplist[j]=1;				//MAP减少
             if(!flag)
             {
-                FAT->id[t]=j;				//
+                FAT->id[t]=j;
                 FAT->id[0]=FAT->id[0]-1;
             }
             t=j;
@@ -495,14 +483,12 @@ int create(char *str,int length)
         }
         j++;
     }
-    FAT->id[t]=-1;				//
+    FAT->id[t]=-1;
     FAT->id[0]=FAT->id[0]-1;
-    printf("已经成功创建文件%s \n",name);
     return 1;
 }
 
 /**
-
 复制文件
 */
 int cp(char *str,char *newname)
@@ -553,6 +539,7 @@ int cp(char *str,char *newname)
     length=dir->list[i].length ;
     create(newname,length);
 }
+
 /*
 *删除文件
 */
@@ -617,16 +604,6 @@ int delfile(char *str)
         return 0;
     }
 
-
-    while(1)
-    {
-        printf("是否确认？（Y/N）");
-        cin>>c;
-        if((c=='y'||c=='Y')||(c=='n'||c=='N'))
-            break;
-
-    }
-
     if(c=='n'||c=='N')
         return 0;
 
@@ -646,84 +623,16 @@ int delfile(char *str)
         FAT->id[0]=FAT->id[0]+1;
         MAP->maplist[blocknum]=0;
         blocknum=temp;
-
-
     }
-
-    printf("已经成功删除%s\n",str);
     return 0;
 }
-int ShowBitMp()
-{
-    int i,j;
-    int list[BLOCK_SIZE]={0};
+/*
+ *重命名文件（将当前文件复制给一个新文件，并删除当前文件）
+ */
 
-    struct map *MAP;
-
-    MAP=(struct map *)(file+(FATNUM+1)*BLOCK_SIZE);
-    j=0;
-    for(i=DATABEG+1;i<BLOCK_SIZE;i++)
-    {
-        if(MAP->maplist[i]==1)
-        {
-            list[j]=i;
-            j++;
-
-        }
-
-    }
-    for(i=0;i<BLOCK_SIZE;i++)
-    {
-        if(list[i]!=0)
-            printf("  %0x",list[i]);
-        if(i%10==0)
-            printf("\n");
-    }
-
-
-    return 0;
-}
-
-int findBit()
-{
-
-    return 0;
-}
-
-int ShowFat()
-{
-    int i,j,flag;
-    struct fatid *FAT;
-    int list[BLOCK_SIZE]={0};
-
-    FAT=(struct fatid *)(file+BLOCK_SIZE);
-    j=0;
-    for(i=DATABEG+1;i<BLOCK_SIZE;i++)
-    {
-        if(FAT->id[i]!=0)
-        {
-            list[j]=i;
-            j++;
-        }
-    }
-    j=0;
-    flag=0;
-    for(i=0;i<BLOCK_SIZE;i++)
-    {
-        if(list[i]!=0)
-        {	printf("  %0x",list[i]);
-            if(flag){
-                if(j%10==0)
-                    printf("\n");
-            }
-            flag=1;
-            j++;
-
-        }
-    }
-
-
-    return 0;
+void rename(char *str,char *newname){
+    cp(str,newname);
+    delfile(str);
 }
 
 /**
@@ -751,12 +660,10 @@ void welcome()
     printf("rmdir  dirname  : 删除子目录.\n");
     printf("ls     dirname  : 显示当前目录下信息.\n");
     printf("cd     dirname  : 更改当前目录.\n");
-    printf("create filename.extren  length : 创建一个新文件.\n");
+    printf("create filename length : 创建一个新文件.\n");
     printf("rm     filename : 删除文件.\n");
     printf("cp oldname newname: 复制文件.\n");
-    printf("ShowBitMP        显示位示图.\n");
-    printf("ShowFAT          显示FAT.\n");
-
+    printf("rename oldname newname : 重命名文件.\n");
     printf("\n--------------------------------------------\n");
 
     //申请虚拟空间
@@ -808,28 +715,24 @@ int main()
         }else if(strcmp(cmd,"create")==0)
         {
             cin>>command>>length;
-
             create(command,length);
         }else if(strcmp(cmd,"cp")==0)
         {
             cin>>command>>newname;
-
             cp(command,newname);
         }else if(strcmp(cmd,"rm")==0)
         {
             scanf("%s",command);
             delfile(command);
-        }else if(strcmp(cmd,"exit")==0){
+        }
+        else if (strcmp(cmd,"rename")==0){
+            cin>>command>>newname;
+            rename(command,newname);
+        }
+        else if(strcmp(cmd,"exit")==0){
             exit();
             break;
-        }else if(strcmp(cmd,"ShowFAT")==0){
-            ShowFat();
-
-        }else if(strcmp(cmd,"ShowBitMp")==0){
-            ShowBitMp();
-
         }
-
         else {
             printf("无效指令,请重新输入:\n");
         }
