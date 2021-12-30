@@ -264,8 +264,6 @@ int rmdir(char *str)
         printf("该文件夹下不存在%s",str);
         return 0;
     }
-
-
     while(1)
     {
         printf("是否确认？（Y/N）");
